@@ -134,13 +134,13 @@ for i in tqdm(range(n)):
 			i_name = data.columns[i]
 			j_name = data.columns[j]
 			k_name = data.columns[k]
-			sns.relplot(x=i_name,y=j_name,data=data, hue= 'Class',legend='brief',size=k_name,sizes=(15, 200))
+			sns.relplot(x=i_name,y=j_name,data=data, hue= 'Class',palette=['r','g','b'],size=k_name,sizes=(15, 200))
 			plt.xlabel(i_name)
 			plt.ylabel(j_name)
 			plt.savefig(i_name+'_vs_'+j_name+'_size_'+k_name+'_scatter_pairs.png')
 			plt.clf()
-		
 
 
-#sns.relplot(x=data.columns[0],y="Alcohol",data=data, hue= 'Class',legend='brief',size='Ash',sizes=(15, 200))
+#data["Class"] = data["Class"].astype(str)
+#sns.relplot(x='Proline',y='OD280 OD315 of diluted wines',data=data,legend='brief',size='Flavanoids',sizes=(15, 200),hue="Class",palette=["r","g","b"])
 #plt.show()
